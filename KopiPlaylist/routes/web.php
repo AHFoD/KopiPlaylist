@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PlaylistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-        // Define your datas array
-        $datas = [
-            ['name' => 'Kedai1', "playlistURL" => "https://www.youtube.com/watch?v=4LcpkfQ0IoI&ab_channel=OrrinMonro"],
-            ['name' => 'Kedai2', "playlistURL" => "null"]
-        ];
-    
-        // Pass $datas to the view
-        return view('welcome', ['datas' => $datas]);
+    return view('welcome');
 });
+
+Route::get('/play', [PlaylistController::class, 'show'])->name('play');
+Route::post('/play', [PlaylistController::class, 'add'])->name('play.add');
