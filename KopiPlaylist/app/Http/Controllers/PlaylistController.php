@@ -4,15 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Playlist;
+use Illuminate\Support\Facades\DB;
 
 
 class PlaylistController extends Controller
 {
-    public function showname()
+
+    public function getPlaylist()
+
     {
-        $playlists = Playlist::all(); 
+        $playlists = DB::connection('supabase')->select('select * from playlist');
         return view('play', compact('playlists'));
     }
+    // public function show()
+    // {
+    //     $playlists = Playlist::all(); 
+    //     return view('play', compact('playlists'));
+    // }
 
     public function showplaylist()
     {

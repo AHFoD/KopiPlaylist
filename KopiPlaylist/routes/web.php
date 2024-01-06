@@ -20,5 +20,7 @@ Route::get('/', function () {
 
 
 Route::get('/playlistinfo/{id}', [PlaylistController::class, 'showplaylist'])->name('playlistinfo');
-Route::get('/play', [PlaylistController::class, 'showname'])->name('play');
+// Route::get('/play', [PlaylistController::class, 'showname'])->name('play');
 Route::post('/play', [PlaylistController::class, 'add'])->name('play.add');
+
+Route::get('/play', [PlaylistController::class, 'getPlaylist'])->name('play');
