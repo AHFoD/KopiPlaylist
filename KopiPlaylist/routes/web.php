@@ -14,5 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+        // Define your datas array
+        $datas = [
+            ['name' => 'Kedai1', "playlistURL" => "https://www.youtube.com/watch?v=4LcpkfQ0IoI&ab_channel=OrrinMonro"],
+            ['name' => 'Kedai2', "playlistURL" => "null"]
+        ];
+    
+        // Pass $datas to the view
+        return view('welcome', ['datas' => $datas]);
 });
