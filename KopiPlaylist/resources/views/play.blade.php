@@ -65,7 +65,8 @@
             @foreach($playlists as $playlist)
             <tr class="border-b border-gray-200 dark:border-gray-600">
                 <td class="px-6 py-4 whitespace-no-wrap">{{ $playlist['shopname'] }}</td>
-                <td class="px-6 py-4 whitespace-no-wrap">{{ $playlist['ply'] }}</td>
+                <td class="px-6 py-4 whitespace-no-wrap">
+                    <a href="{{ url('playlistinfo/' . $playlist['id']) }}" class="text-blue-500 hover:underline">View Playlist</a>
             </tr>
            
               
