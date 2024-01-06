@@ -56,7 +56,7 @@
         <thead class="bg-gray-200 text-gray-700">
             <tr>
                 <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Name</th>
-                <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Playlist URL</th>
+                <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Playlist</th>
             </tr>
         </thead>
         <tbody class="divide-y divide-gray-200">
@@ -65,8 +65,11 @@
             @foreach($playlists as $playlist)
             <tr class="border-b border-gray-200 dark:border-gray-600">
                 <td class="px-6 py-4 whitespace-no-wrap">{{ $playlist['shopname'] }}</td>
-               
+                <td class="px-6 py-4 whitespace-no-wrap">{{ $playlist['ply'] }}</td>
             </tr>
+           
+              
+   
             @endforeach
         </tbody>
     </table>
