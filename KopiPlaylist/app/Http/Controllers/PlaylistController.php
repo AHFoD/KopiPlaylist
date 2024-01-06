@@ -17,7 +17,7 @@ class PlaylistController extends Controller
     public function showplaylist()
     {
         $playlists = Playlist::all(); 
-        return view('playinfo', compact('playlists'));
+        return view('playlistinfo', compact('playlists'));
     }
 
 
