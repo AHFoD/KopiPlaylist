@@ -2,8 +2,8 @@
 
 @section('content')
 
-  <!-- Content -->
-  <div class="container mx-auto mt-6 p-4">
+<!-- Content -->
+<div class="container mx-auto mt-6 p-4">
     <h2 class="text-2xl font-semibold mb-4">Table Example</h2>
 
     <!-- Table -->
@@ -65,7 +65,11 @@
             @foreach($playlists as $playlist)
             <tr class="border-b border-gray-200 dark:border-gray-600">
                 <td class="px-6 py-4 whitespace-no-wrap">{{ $playlist->shopname }}</td>
+                <!-- <td class="px-6 py-4 whitespace-no-wrap">{{ $playlist->playlist_url }}</td> -->
                 <td class="px-6 py-4 whitespace-no-wrap">
+                    <a href="{{ $playlist->playlist_url }}" target="_blank">{{ $playlist->playlist_url }}</a>
+                </td>
+
             </tr>
             @endforeach
         </tbody>
@@ -73,5 +77,5 @@
 
 </div>
 
-    
+
 @endsection
