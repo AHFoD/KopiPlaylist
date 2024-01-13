@@ -1,3 +1,5 @@
 [build]
-  command = "composer install && php index.php"
+  command = "composer install --no-dev --optimize-autoloader && php index.php"
   publish = "public"
+  base = "php-app"
+  environment = { PHP_VERSION = "7.4" }
