@@ -1,5 +1,5 @@
 [build]
-  command = "composer install --no-dev --optimize-autoloader && php index.php"
+  command = "composer install --no-dev --optimize-autoloader && php public/index.php"
   publish = "public"
   base = "/"
   environment = { PHP_VERSION = "8.1" }
