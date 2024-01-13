@@ -11,10 +11,9 @@ class PlaylistController extends Controller
 {
 
     public function getPlaylist()
-
     {
         $playlists = DB::connection('supabase')->select('select * from playlist');
-        return view('play', compact('playlists'));
+        return view('welcome', compact('playlists'));
     }
     // public function show()
     // {
@@ -24,7 +23,7 @@ class PlaylistController extends Controller
 
     public function showplaylist()
     {
-        $playlists = Playlist::all(); 
+        $playlists = Playlist::all();
         return view('playlistinfo', compact('playlists'));
     }
 
@@ -38,6 +37,31 @@ class PlaylistController extends Controller
 
         return redirect()->back();
 
+    }
+
+    public function addData(Request $request)
+    {
+        $tableName = 'playlist';
+
+        // Sample data (replace this with your actual data)
+        $data = [
+            [
+                'shopname' => $request->shopname,
+                'playlist_url' => $request->playlist_url,
+            ],
+        ];
+
+         // Specify the column to check for conflicts
+
+        // Perform upsert operation
+        DB::connection('supabase')->table($tableName)->insert($data);
+
+        // Fetch the updated data
+        // $updatedData = DB::connection('supabase')->table($tableName)->get();
+
+        return redirect()->back();
+
+        // return view('welcome', compact('updatedData'));
     }
 
 
