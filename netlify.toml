@@ -1,4 +1,4 @@
 [build]
   command = "composer install --no-dev --optimize-autoloader && php index.php"
   publish = "public"
-  environment = { PHP_VERSION = "7.4" }
+  environment = { PHP_VERSION = "8.1" }
