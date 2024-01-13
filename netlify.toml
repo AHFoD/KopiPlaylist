@@ -1,5 +1,4 @@
 [build]
   command = "composer install --no-dev --optimize-autoloader && php index.php"
   publish = "public"
-  base = "/KopiPlaylist/KopiPlaylist"
   environment = { PHP_VERSION = "7.4" }
