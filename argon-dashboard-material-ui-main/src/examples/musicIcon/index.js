@@ -42,24 +42,27 @@ SpotifyIcon.propTypes = {
 };
 
 const PlaylistIcons = ({ url }) => {
-  const [selectedUrl, setSelectedUrl] = useState([]);
   const getServiceIcon = (url) => {
-    console.log({ url });
-    const serviceIcons = {
-      youtube: <YouTubeIcon />,
-      applemusic: <AppleMusicIcon />,
-      spotify: <SpotifyIcon />,
-    };
+    try {
+      console.log({ url });
+      const serviceIcons = {
+        youtube: <YouTubeIcon />,
+        applemusic: <AppleMusicIcon />,
+        spotify: <SpotifyIcon />,
+      };
 
-    let selectedUrl = "";
-    // Extract service name from URL (you may need a more robust method)
-    if (url) {
-      selectedUrl = url;
-      const serviceName = url.split(".")[1]; // Example: "youtube.com" -> "youtube"
-      console.log({ serviceName });
-      return serviceIcons[serviceName.toLowerCase()] || null;
-    } else {
-      return null;
+      let selectedUrl = "";
+      // Extract service name from URL (you may need a more robust method)
+      if (url) {
+        selectedUrl = url;
+        const serviceName = url.split(".")[1]; // Example: "youtube.com" -> "youtube"
+        console.log({ serviceName });
+        return serviceIcons[serviceName.toLowerCase()] || null;
+      } else {
+        return null;
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -68,19 +71,7 @@ const PlaylistIcons = ({ url }) => {
     url: PropTypes.string, // Add url prop type
   };
 
-  const getHref = (url) => {
-    if (url) {
-      return url;
-    } else {
-      return "#"; // Default href if URL is not provided
-    }
-  };
-
-  return (
-    // <a href={selectedUrl} target="_blank" rel="noopener noreferrer">
-    getServiceIcon(url)
-    // </a>
-  );
+  return getServiceIcon(url);
 };
 
 export default PlaylistIcons;

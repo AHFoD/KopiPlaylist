@@ -43,44 +43,46 @@ function CategoriesList({ title, categories }) {
       // mb={categories.length - 1 === key ? 0 : 1}
     >
       <ArgonBox display="flex" alignItems="center">
-        <ArgonBox
-          display="grid"
-          alignItems="center"
-          justifyContent="center"
-          bgColor="light"
-          borderRadius="lg"
-          shadow="md"
-          color="white"
-          width="2rem"
-          height="2rem"
-          mr={2}
-          variant="gradient"
-        >
-          <Icon
-            sx={{
-              display: "grid",
-              placeItems: "center",
-            }}
+        <a href={categories.playlist_url || "#"} target="_blank" rel="noopener noreferrer">
+          <ArgonBox
+            display="grid"
+            alignItems="center"
+            justifyContent="center"
+            bgColor="light"
+            borderRadius="lg"
+            shadow="md"
+            color="white"
+            width="2rem"
+            height="2rem"
+            mr={2}
+            variant="gradient"
           >
-            {/* {icon} */}
-            <PlaylistIcons url={categories.playlist_url} />
-          </Icon>
-        </ArgonBox>
-        <ArgonBox display="flex" flexDirection="column">
+            <Icon
+              sx={{
+                display: "grid",
+                placeItems: "center",
+              }}
+            >
+              {/* {icon} */}
+              <PlaylistIcons url={categories.playlist_url || "None"} />
+            </Icon>
+          </ArgonBox>
+        </a>
+        {/* <ArgonBox display="flex" flexDirection="column">
           <ArgonTypography variant="button" color="dark" fontWeight="medium" gutterBottom>
             {categories.playlist_url}
           </ArgonTypography>
           <ArgonTypography variant="caption" color="text">
-            {/* {description} */}
+            {description}
           </ArgonTypography>
-        </ArgonBox>
+        </ArgonBox> */}
       </ArgonBox>
-      <ArgonBox display="flex">
+      {/* <ArgonBox display="flex">
         <ArgonTypography
-          // component={Link}
+          component={Link}
           variant="button"
           color="dark"
-          // to={route}
+          to={route}
           sx={{
             lineHeight: 0,
             transition: "all 0.2s cubic-bezier(.34,1.61,.7,1.3)",
@@ -93,7 +95,7 @@ function CategoriesList({ title, categories }) {
         >
           <Icon sx={{ fontWeight: "bold" }}>chevron_right</Icon>
         </ArgonTypography>
-      </ArgonBox>
+      </ArgonBox> */}
     </ArgonBox>
   );
 
