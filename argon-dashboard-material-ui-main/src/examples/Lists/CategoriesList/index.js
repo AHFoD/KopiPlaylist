@@ -28,8 +28,6 @@ import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 import PlaylistIcons from "examples/musicIcon";
 function CategoriesList({ title, categories }) {
-  console.log({ categories });
-
   const renderItems = (
     <ArgonBox
       // key={name}
