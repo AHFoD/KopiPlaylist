@@ -44,7 +44,6 @@ SpotifyIcon.propTypes = {
 const PlaylistIcons = ({ url }) => {
   const getServiceIcon = (url) => {
     try {
-      console.log({ url });
       const serviceIcons = {
         youtube: <YouTubeIcon />,
         applemusic: <AppleMusicIcon />,
@@ -56,7 +55,6 @@ const PlaylistIcons = ({ url }) => {
       if (url) {
         selectedUrl = url;
         const serviceName = url.split(".")[1]; // Example: "youtube.com" -> "youtube"
-        console.log({ serviceName });
         return serviceIcons[serviceName.toLowerCase()] || null;
       } else {
         return null;
